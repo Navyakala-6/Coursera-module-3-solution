@@ -1,0 +1,95 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  transition: padding-top 0.3s ease; /* Smooth transition for menu opening */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  font-size: 28px;
+  margin: 0 15px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger Hover Effect */
+.hamburger:hover {
+  color: #e74c3c; /* Red on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+  text-decoration: underline;
+}
+
+/* Mobile Navigation Menu */
+.nav-menu {
+  display: none;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-item {
+  margin-bottom: 10px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Subheading */
+.subheading {
+  font-size: 20px;
+  font-weight: 500;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* Grid System */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+[class*="col-"] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Extra Small Devices (Mobile) */
+.col-xs-12 {
+  width: 100%;
+}
+
+/* Medium Devices (Desktop) */
+@media (min-width: 768px) {
+  .col-md-4 {
+    width: calc(33.333% - 20px); /* Adjust for margins */
+  }
+}
