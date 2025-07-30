@@ -16,7 +16,7 @@ header {
   padding: 15px 20px;
 }
 
-header .logo {
+.logo {
   font-size: 24px;
   font-weight: bold;
 }
@@ -32,8 +32,10 @@ nav {
   font-size: 26px;
   cursor: pointer;
   margin-top: 10px;
+  color: white;
 }
 
+/* Desktop Navigation */
 .nav-links {
   list-style: none;
   display: flex;
@@ -47,22 +49,39 @@ nav {
   font-size: 16px;
 }
 
-/* Mobile styles */
+/* Mobile Navigation */
 @media screen and (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
+    align-items: center; /* Center horizontally */
     width: 100%;
-    background-color: #ff6600;
+    background-color: #fff; /* Different background from header */
     padding: 10px 0;
+    border-top: 2px solid #ccc;
   }
 
   .nav-links.active {
     display: flex;
   }
 
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #ccc;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    color: #333;
+    font-weight: bold;
+  }
+
   .hamburger {
     display: block;
+    color: white;
   }
 }
 
