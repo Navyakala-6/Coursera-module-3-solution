@@ -20,8 +20,8 @@ header {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index: 2;
-  border: 10px;
+  border: 2px solid black;
+  box-sizing: border-box;
 }
 
 .logo {
