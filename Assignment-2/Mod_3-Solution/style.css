@@ -13,8 +13,8 @@ body {
 
 /* --- HEADER --- */
 header {
-  background-color: #ff6600;
-  color: white;
+  background-color: #545453;
+  color: black;
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -73,9 +73,10 @@ main {
 }
 
 .menu-box {
-  background-color: white;
+  background-color: #545453;
+  color: black;
   padding: 20px;
-  margin: 15px auto;
+  margin: 20px 0;
   border-radius: 8px;
   max-width: 600px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -84,7 +85,7 @@ main {
 
 .menu-box h2 {
   font-size: 20px;
-  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 /* --- MEDIA QUERIES --- */
