@@ -1,52 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Food Website</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-brand">Food, LLC</div>
-  </nav>
+  <header>
+    <div class="logo">Food, LLC</div>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+  </header>
 
-  <!-- Hamburger Menu Button -->
-  <button class="hamburger" id="hamburger">&#9776;</button>
+  <main>
+    <h1 class="menu-heading">Our Menu</h1>
 
-  <!-- Mobile Navigation Menu -->
-  <ul class="nav-menu" id="nav-menu">
-    <li class="nav-item"><a href="#">Chicken</a></li>
-    <li class="nav-item"><a href="#">Beef</a></li>
-    <li class="nav-item"><a href="#">Sushi</a></li>
-  </ul>
+    <section class="menu-box">
+      <h2>Appetizers</h2>
+      <p>Try our delicious starters like spring rolls, samosas, and more.</p>
+    </section>
 
-  <!-- Subheading -->
-  <div class="subheading">Our Menu</div>
+    <section class="menu-box">
+      <h2>Main Course</h2>
+      <p>Enjoy a variety of dishes including pasta, curry, and grilled meats.</p>
+    </section>
 
-  <!-- Boxes (Menu Content) -->
-  <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <div class="box">
-        <h3>Appetizers</h3>
-        <p>Try our delicious starters like spring rolls, samosas, and more.</p>
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <div class="box">
-        <h3>Main Course</h3>
-        <p>Enjoy a variety of dishes including pasta, curry, and grilled meats.</p>
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <div class="box">
-        <h3>Desserts</h3>
-        <p>End your meal with our sweet treats like cheesecake, ice cream, and more.</p>
-      </div>
-    </div>
-  </div>
+    <section class="menu-box">
+      <h2>Desserts</h2>
+      <p>End your meal with our sweet treats like cheesecake, ice cream, and more.</p>
+    </section>
+  </main>
 
-  <script src="script.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
