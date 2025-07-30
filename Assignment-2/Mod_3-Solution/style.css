@@ -89,17 +89,37 @@ main {
 
 /* --- MEDIA QUERIES --- */
 @media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
 
   .nav-links {
     display: none;
     flex-direction: column;
+    width: 100%;
     list-style: none;
-    border-top: 2px solid #ccc;
-    left: 0;
+    background-color: white;
+    margin-top: 0;
+    padding: 0;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid#ddd;
   }
 
   .nav-links.active {
     display: flex;
+  }
+
+  .nav-links li {
+    border-top: 1px solid #ccc;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 12px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
   }
 }
 
