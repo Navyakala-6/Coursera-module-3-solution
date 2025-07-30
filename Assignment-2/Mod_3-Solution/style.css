@@ -1,3 +1,4 @@
+/* --- GENERAL RESET --- */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +11,7 @@ body {
   color: #333;
 }
 
-/* ---------- HEADER ---------- */
+/* --- HEADER --- */
 header {
   background-color: #ff6600;
   color: white;
@@ -23,32 +24,55 @@ header {
 }
 
 .logo {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: bold;
 }
 
-/* Hide hamburger by default (desktop) */
+/* --- HAMBURGER ICON --- */
 .hamburger {
-  display: none;
   font-size: 28px;
   cursor: pointer;
   color: white;
+  display: none; /* visible in mobile only */
 }
 
-/* ---------- HIDDEN MENU ---------- */
+/* --- NAVIGATION MENU (dropdown) --- */
 .nav-links {
   display: none;
+  flex-direction: column;
+  list-style: none;
+  background-color: white;
+  width: 100%;
+  border-top: 2px solid #ccc;
+  z-index: 1;
 }
 
-/* ---------- MAIN CONTENT ---------- */
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links li {
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+.nav-links li a {
+  display: block;
+  padding: 12px 0;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* --- MAIN CONTENT --- */
 main {
   padding: 20px;
 }
 
 .menu-heading {
   text-align: center;
-  margin-bottom: 30px;
   font-size: 28px;
+  margin: 20px 0;
 }
 
 .menu-box {
@@ -63,39 +87,29 @@ main {
 
 .menu-box h2 {
   font-size: 20px;
-  font-weight: bold;
   margin-bottom: 10px;
 }
 
-/* ---------- MOBILE STYLES ---------- */
+/* --- MEDIA QUERIES --- */
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
   }
 
   .nav-links {
+    position: absolute;
+    top: 60px; /* height of header */
+    left: 0;
+  }
+}
+
+/* Desktop: hide hamburger and nav-links */
+@media screen and (min-width: 769px) {
+  .hamburger {
     display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: white;
-    border-top: 2px solid #ccc;
-
   }
 
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links.active li {
-    border-top: 1px solid #ccc;
-    text-align: center;
-  }
-
-  .nav-links.active li a {
-    display: block;
-    padding: 12px 0;
-    color: #333;
-    font-weight: bold;
-    text-decoration: none;
+  .nav-links {
+    display: none !important;
   }
 }
