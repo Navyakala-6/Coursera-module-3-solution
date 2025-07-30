@@ -10,7 +10,7 @@ body {
   color: #333;
 }
 
-/* --- HEADER + NAVBAR --- */
+/* ---------- HEADER ---------- */
 header {
   background-color: #ff6600;
   color: white;
@@ -18,7 +18,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative; /* For dropdown positioning */
+  position: relative;
   z-index: 2;
 }
 
@@ -27,6 +27,7 @@ header {
   font-weight: bold;
 }
 
+/* Hide hamburger by default (desktop) */
 .hamburger {
   display: none;
   font-size: 28px;
@@ -34,57 +35,12 @@ header {
   color: white;
 }
 
-/* --- MAIN NAVIGATION MENU --- */
+/* ---------- HIDDEN MENU ---------- */
 .nav-links {
-  display: flex;
-  gap: 20px;
-  list-style: none;
+  display: none;
 }
 
-.nav-links li a {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-}
-
-/* --- MOBILE STYLES --- */
-@media screen and (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  /* Dropdown menu styles */
-  .nav-links.active {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    border-top: 2px solid #ccc;
-    z-index: 1;
-  }
-
-  .nav-links.active li {
-    border-top: 1px solid #ccc;
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links.active li a {
-    display: block;
-    padding: 12px 0;
-    color: #333;
-    font-weight: bold;
-  }
-}
-
-/* --- MAIN CONTENT --- */
+/* ---------- MAIN CONTENT ---------- */
 main {
   padding: 20px;
 }
@@ -109,4 +65,41 @@ main {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+/* ---------- MOBILE STYLES ---------- */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Drops just below the navbar */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-top: 2px solid #ccc;
+    z-index: 1;
+  }
+
+  .nav-links.active li {
+    border-top: 1px solid #ccc;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links.active li a {
+    display: block;
+    padding: 12px 0;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+  }
 }
