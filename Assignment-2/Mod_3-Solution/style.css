@@ -32,7 +32,7 @@ header {
 .hamburger {
   font-size: 28px;
   cursor: pointer;
-  color: white;
+  color: black;
   display: none; /* visible in mobile only */
 }
 
