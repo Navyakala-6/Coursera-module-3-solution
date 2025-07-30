@@ -89,10 +89,8 @@ main {
   color: black;
   padding: 20px;
   width: 300px;
-  margin: 20px 0;
-  border-radius: 0px;
-  max-width: 600px;
-  text-align: center;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .menu-box h2 {
