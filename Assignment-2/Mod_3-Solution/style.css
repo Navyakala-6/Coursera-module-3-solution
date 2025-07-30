@@ -34,6 +34,10 @@ header {
   cursor: pointer;
   color: black;
   display: none; /* visible in mobile only */
+  transition: color 0.3s ease;
+}
+.hamburger:hover {
+    color: white;
 }
 
 /* --- NAVIGATION MENU (dropdown) --- */
@@ -91,6 +95,10 @@ main {
 @media screen and (max-width: 768px) {
     .hamburger {
         display: block;
+    }
+
+    .hamburger.active {
+        color: white;
     }
 
   .nav-links {
