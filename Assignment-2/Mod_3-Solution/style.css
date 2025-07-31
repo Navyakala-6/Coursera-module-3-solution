@@ -98,13 +98,13 @@ main {
   padding: 20px;
   width: 380px;
   border-radius: 8px;
-  text-align: center;
+  text-align: :left;
   box-sizing: border-box;
 }
 
 .menu-box p{
-  max-width: 90%;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0 ;
   line-height: 1.6;
   font-size: 16px;
 }
