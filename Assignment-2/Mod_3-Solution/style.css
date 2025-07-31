@@ -68,40 +68,38 @@ header {
 
 /* --- MAIN CONTENT --- */
 main {
-  padding: 20px;
+  min-height: calc(100vh - 100px); /* adjust height below navbar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* vertical center */
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
 .menu-heading {
+  font-size: 32px;
+  margin-bottom: 40px;
   text-align: center;
-  font-size: 28px;
-  margin: 20px 0;
 }
 
 .menu-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  margin: 20px auto;
+  gap: 30px;
   max-width: 1000px;
-  padding: 0 20px;
+  width: 100%;
 }
 
 .menu-box {
-  background-color: #827f7f;
-  color: black;
+  background-color: #ff6600;
+  color: white;
   padding: 20px;
   width: 280px;
-  border-radius: 0px;
+  border-radius: 8px;
   text-align: center;
-  box-shadow: 0 2px 8px r gba(0,0,0,0.2);
 }
-
-.menu-box h2 {
-  font-size: 20px;
-  font-weight: bold;
-}
-
 /* --- MEDIA QUERIES --- */
 @media screen and (max-width: 768px) {
     .hamburger {
