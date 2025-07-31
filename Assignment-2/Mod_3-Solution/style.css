@@ -96,10 +96,20 @@ main {
   background-color: #827f7f
   color: white;
   padding: 20px;
-  width: 280px;
+  width: 380px;
   border-radius: 8px;
   text-align: center;
+  box-sizing: border-box;
 }
+
+.menu-box p{
+  max-width: 90%;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+
 /* --- MEDIA QUERIES --- */
 @media screen and (max-width: 768px) {
     .hamburger {
@@ -153,5 +163,9 @@ main {
 
   .nav-links {
     display: none !important;
+  }
+
+  .menu-box {
+    width: 90%;
   }
 }
