@@ -97,8 +97,8 @@ main {
   color: white;
   padding: 30px 25px;
   width: 380px;
-  border-radius: 20px;
-  text-align: :left;
+  border-radius: 0px;
+  text-align: : center;
   box-sizing: border-box;
 }
 
