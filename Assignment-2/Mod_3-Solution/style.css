@@ -9,72 +9,104 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f8f8f8;
   color: black;
+  overflow-x: hidden;
 }
 
-/* --- HEADER --- */
-header {
-  background-color: #827f7f;
-  color: black;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+/* --- BOOTSTRAP NAVBAR CUSTOMIZATION --- */
+.navbar {
+  background-color: #827f7f !important;
   border: 3px solid black;
   box-sizing: border-box;
-}
-
-.logo {
-  font-size: 26px;
-  font-weight: bold;
-}
-
-/* --- HAMBURGER ICON --- */
-.hamburger {
-  font-size: 28px;
-  cursor: pointer;
-  color: black;
-  display: none; /* visible in mobile only */
-  transition: color 0.3s ease;
-}
-.hamburger:hover {
-    color: white;
-}
-
-/* --- NAVIGATION MENU (dropdown) --- */
-.nav-links {
-  margin-top: 0;
-  padding: 0;
-  background-color: white;
-  z-index: 1;
-}
-
-.nav-links.active {
+  z-index: 1030;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 70px;
   display: flex;
+  align-items: center;
+  transform: none !important;
 }
 
-.nav-links li {
-  border-top: 1px solid #ccc;
-  text-align: center;
+.navbar-brand {
+  font-size: 26px !important;
+  font-weight: bold !important;
+  color: black !important;
 }
 
-.nav-links li a {
-  display: block;
-  padding: 12px 0;
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
+.navbar-nav .nav-link {
+  color: black !important;
+  font-weight: bold !important;
+  padding: 12px 20px !important;
+  transition: none;
+}
+
+/* Remove hover effects for dropdown options */
+.navbar-nav .nav-link:hover {
+  color: black !important;
+  background-color: #ccc !important;
+}
+
+.navbar-toggler {
+  border: 2px solid black !important;
+  transition: all 0.3s ease;
+  background-color: transparent !important;
+}
+
+.navbar-toggler:hover {
+  background-color: #555 !important;
+  border-color: #222 !important;
+  transform: scale(1.1);
+}
+
+/* Hamburger hover effect when dropdown is open */
+.navbar-toggler[aria-expanded="true"] {
+  background-color: #444 !important;
+  border-color: #111 !important;
+}
+
+.navbar-toggler[aria-expanded="true"]:hover {
+  background-color: #333 !important;
+  border-color: #000 !important;
+  transform: scale(1.1);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+/* Ensure dropdown menu appears above content */
+.navbar-collapse {
+  z-index: 1031;
+}
+
+.navbar-nav {
+  z-index: 1031;
+}
+
+/* Hide dropdown when collapsed to prevent interference */
+.navbar-collapse:not(.show) {
+  display: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
 }
 
 /* --- MAIN CONTENT --- */
-main {
-  min-height: calc(100vh - 100px); /* adjust height below navbar */
+.main-content {
+  padding-top: 250px; /* Further increased padding to account for navbar and dropdown */
+  min-height: calc(100vh - 250px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* vertical center */
-  padding: 40px 20px;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  transform: none !important;
 }
 
 .menu-heading {
@@ -116,64 +148,55 @@ main {
   font-size: 22px;
 }
 
-
 /* --- MEDIA QUERIES --- */
 @media screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
-    .hamburger.active {
-        color: white;
-    }
-
-    .menu-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-  .nav-links {
-    display: none;
+  .menu-container {
     flex-direction: column;
-    width: 100%;
-    list-style: none;
+    align-items: center;
+  }
+
+  .navbar-collapse {
+    position: fixed;
+    top: 70px; /* Match navbar height */
+    left: 0;
+    right: 0;
     background-color: white;
-    margin-top: 0;
-    padding: 0;
     border-top: 2px solid #ddd;
-    border-bottom: 2px solid#ddd;
+    border-bottom: 2px solid #ddd;
+    z-index: 1031;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
 
-  .nav-links.active {
-    display: flex;
+  .navbar-nav {
+    margin: 0;
+    padding: 0;
   }
 
-  .nav-links li {
-    border-top: 1px solid #ccc;
+  .navbar-nav .nav-item {
+    border-top: 2px solid #999;
     text-align: center;
   }
 
-  .nav-links li a {
-    display: block;
-    padding: 12px;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
+  .navbar-nav .nav-link {
+    padding: 12px !important;
+    text-align: center;
+    color: black !important;
   }
 }
 
-/* Desktop: hide hamburger and nav-links */
+/* Desktop: adjust menu box width and hide navigation links */
 @media screen and (min-width: 769px) {
-  .hamburger {
-    display: none;
-  }
-
-  .nav-links {
-    display: none !important;
-  }
-
   .menu-box {
     width: 100%;
     max-width: 1200px;
+  }
+  
+  /* Hide navigation links in desktop mode, show only brand name */
+  .navbar-nav {
+    display: none !important;
+  }
+  
+  .navbar-toggler {
+    display: none !important;
   }
 }
