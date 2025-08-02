@@ -184,6 +184,7 @@ body {
   }
 }
 
+
 /* Desktop: adjust menu box width and hide navigation links */
 @media screen and (min-width: 769px) {
   .menu-box {
